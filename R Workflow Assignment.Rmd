@@ -1,0 +1,22 @@
+---
+title: "R Workflow Assignment"
+author: "Xeem Xiong"
+date: "4/6/2022"
+output: html_document
+---
+
+Column Summary
+```{r}
+dessertsRated <-read.csv("C:/Users/Possi/Desktop/R Workflow Assignment/R Workflow Assignment/Desserts Rated.csv", header= TRUE, sep=",")
+
+summary(dessertsRated)
+
+```
+
+Visual Representation
+```{r}
+library(ggplot2)
+library(viridis)
+library(RColorBrewer)
+ggplot(dessertsRated, aes(ï..Favorite.Desserts, Dessert.Rating..0.10., fill= Possible.Quantity.Eaten)) + geom_bar(stat="identity") +xlab(label= "Favorite Dessert") + ylab(label="Dessert Rating (1-10)")+scale_fill_viridis(discrete = FALSE, option="G") + theme_dark()
+```
